@@ -1,2 +1,2 @@
-# DeschateieApp
-Repostorio destinado para realização da aplicação do projeto Deschateie e Integração Continua com o Heroku
+# backend
+Repositorio focado no desenvolvimento backend da aplicacao
