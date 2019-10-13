@@ -21,14 +21,19 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fiap.deschateie.model.Paciente;
+import br.com.fiap.deschateie.model.Usuario;
 import br.com.fiap.deschateie.repository.PacienteRepository;
+import br.com.fiap.deschateie.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("paciente")
 public class PacienteResource {
+	
     @Autowired
     private PacienteRepository pacienteRepository;
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @GetMapping
     public Page<Paciente> buscarTodos(Pageable pageable){
@@ -49,10 +54,11 @@ public class PacienteResource {
         return ResponseEntity.badRequest().build();
     }
 
-    @PostMapping("cadastrar")
+    @PostMapping("{id}")
     @Transactional
     @ResponseStatus(value=HttpStatus.CREATED)
-    public Paciente cadastrar(@RequestBody Paciente paciente) {
+    public Paciente cadastrar(@PathVariable long id, @RequestBody Paciente paciente) {
+    	paciente.setId(id);
         Paciente novoPaciente = new Paciente(paciente);
         return pacienteRepository.save(novoPaciente);
     }
@@ -61,8 +67,9 @@ public class PacienteResource {
     @Transactional
     @ResponseStatus(value=HttpStatus.OK)
     public Paciente alterar(@RequestBody Paciente paciente, @PathVariable long id){
-        paciente.setId(id);
-        return pacienteRepository.save(paciente);
+    	Paciente pacienteNovo = new Paciente(paciente);
+        pacienteNovo.setId(id);
+        return pacienteRepository.save(pacienteNovo);
     }
 
     @DeleteMapping("{id}")

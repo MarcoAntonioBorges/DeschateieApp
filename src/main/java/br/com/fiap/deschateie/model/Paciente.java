@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_SCP_PACIENTE")
-@PrimaryKeyJoinColumn(name = "cd_usuario")
+@PrimaryKeyJoinColumn(name = "id")
 public class Paciente extends Usuario {
 
 
@@ -42,12 +42,25 @@ public class Paciente extends Usuario {
 		this.consultasRealizadas = consultasRealizadas;
 	}
 	
+	
+	
+	public Paciente(long id, String nomeUsuario, String email, LocalDate dataNascimento, String login, String senha, String foto, String genero, long cpf, String cep, String historico,
+			int consultasRealizadas) {
+		super(id, nomeUsuario, email, dataNascimento, login, senha, NumeroPermissao.P1, foto, genero);
+		this.cpf = cpf;
+		this.cep = cep;
+		this.historico = historico;
+		this.consultasRealizadas = consultasRealizadas;
+	}
+
+
+
 	public Paciente() {
 		super();
 	}
 
 	public Paciente(Paciente paciente) {
-		super(paciente.getNomeUsuario(), paciente.getEmail(), paciente.getDataNascimento(), paciente.getLogin(), paciente.getSenha(), paciente.getFoto(), paciente.getGenero());
+		super(paciente.getId(), paciente.getNomeUsuario(), paciente.getEmail(), paciente.getDataNascimento(), paciente.getLogin(), paciente.getSenha(), NumeroPermissao.P1, paciente.getFoto(), paciente.getGenero());
 		this.cpf = paciente.getCpf();
 		this.cep = paciente.getCep();
 		this.historico = paciente.getHistorico();
@@ -87,10 +100,5 @@ public class Paciente extends Usuario {
 	public void setConsultasRealizadas(int consultasRealizadas) {
 		this.consultasRealizadas = consultasRealizadas;
 	}
-
-	
-    
-	
-
 
 }

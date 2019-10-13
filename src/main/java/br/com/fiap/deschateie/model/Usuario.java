@@ -24,9 +24,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "T_SCP_USUARIO")
-@SequenceGenerator(name = "cd_usuario",sequenceName = "SQ_T_SCP_USUARIO",allocationSize = 1)
 @Inheritance(strategy = InheritanceType.JOINED)
-@Data
 public class Usuario implements Serializable {
 
     /**
@@ -35,8 +33,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 7586472784578647213L;
 
 	@Id
-    @Column(name = "cd_usuario")
-    @GeneratedValue(strategy=GenerationType.IDENTITY,generator = "cd_usuario")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "nm_usuario",length = 80,nullable = false)
@@ -51,14 +48,14 @@ public class Usuario implements Serializable {
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate dataNascimento;
 
-    @Column(name ="ds_login", nullable = false,length = 20,unique = true)
+    @Column(name ="ds_login", nullable = false,length = 20)
     private String login;
 
     @Column(name = "ds_senha",nullable = false,length = 15)
     private String senha;
 
     @Column(name = "nr_nivel_permissao",nullable = false)
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private NumeroPermissao nivelPermissao;
 
     @Column(name = "ds_foto", length=500)
@@ -78,9 +75,66 @@ public class Usuario implements Serializable {
         this.genero = genero;
     }
 
+	
+	
+	public Usuario(long id, String nomeUsuario, String email, LocalDate dataNascimento, String login, String senha,
+			NumeroPermissao nivelPermissao, String foto, String genero) {
+		super();
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.login = login;
+		this.senha = senha;
+		this.nivelPermissao = nivelPermissao;
+		this.foto = foto;
+		this.genero = genero;
+	}
+	
+	public Usuario(String nomeUsuario, String email, LocalDate dataNascimento, String login, String senha,
+			NumeroPermissao nivelPermissao, String foto, String genero) {
+		super();
+		this.nomeUsuario = nomeUsuario;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.login = login;
+		this.senha = senha;
+		this.nivelPermissao = nivelPermissao;
+		this.foto = foto;
+		this.genero = genero;
+	}
+	
+	public Usuario(long id, String nomeUsuario, String email, LocalDate dataNascimento, String login, String senha, String foto, String genero) {
+		super();
+		this.id = id;
+		this.nomeUsuario = nomeUsuario;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.login = login;
+		this.senha = senha;
+		this.nivelPermissao = NumeroPermissao.P0;
+		this.foto = foto;
+		this.genero = genero;
+	}
+
+
+
 	public Usuario() {
 		super();
 	}
+
+	public Usuario(Usuario usuario) {
+		this.nomeUsuario = usuario.getNomeUsuario();
+	    this.email = usuario.getEmail();
+	    this.dataNascimento = usuario.getDataNascimento();
+	    this.login = usuario.getLogin();
+	    this.senha = usuario.getSenha();
+	    this.nivelPermissao = NumeroPermissao.P0;
+	    this.foto = usuario.getFoto();
+	    this.genero = usuario.getGenero();
+	}
+
+
 
 	public long getId() {
 		return id;

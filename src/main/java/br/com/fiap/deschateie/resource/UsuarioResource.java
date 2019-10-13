@@ -35,14 +35,16 @@ public class UsuarioResource {
 
     @PostMapping("cadastrar")
     public ResponseEntity<Usuario> cadastrar(@RequestBody @Valid Usuario usuario) {
-        return new ResponseEntity<>(usuarioRepository.save(usuario),HttpStatus.CREATED);
+    	Usuario novoUsuario = new Usuario(usuario);
+        return new ResponseEntity<>(usuarioRepository.save(novoUsuario),HttpStatus.CREATED);
     }
 
 
     @PutMapping("{id}")
     public Usuario alterar(@RequestBody @Valid Usuario usuario, @PathVariable long id){
-        usuario.setId(id);
-        return usuarioRepository.save(usuario);
+    	Usuario novoUsuario = new Usuario(usuario);
+    	novoUsuario.setId(id);
+        return usuarioRepository.save(novoUsuario);
     }
 
     @DeleteMapping("{id}")
