@@ -1,106 +1,110 @@
 package br.com.fiap.deschateie.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "T_SCP_PSICOLOGO")
-@PrimaryKeyJoinColumn(name = "cd_usuario")
-public class Psicologo extends  Usuario{
-	
-    /**
+@Table(name="T_DES_PSICOLOGO")
+@PrimaryKeyJoinColumn(name="codigo")
+public class Psicologo extends Usuario{
+
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -279587444174450354L;
+	private static final long serialVersionUID = 3035904872089262853L;
+	private Long crp;
+	private String formacao;
+	private String biografia;
+	private Long telefone;
+	private Double valorConsulta;
+	
+	public Psicologo(Long crp, String formacao, String biografia,
+			Long telefone, Double valorConsulta) {
+		super();
+		this.crp = crp;
+		this.formacao = formacao;
+		this.biografia = biografia;
+		this.telefone = telefone;
+		this.valorConsulta = valorConsulta;
+	}
+	
+	
+	public Psicologo(String nome, String email, LocalDate dataNascimento,
+			String login, String senha, NumeroPermissao numeroPermissao,
+			Genero genero, Long crp, String formacao, String biografia,
+			Long telefone, Double valorConsulta) {
+		super(nome, email, dataNascimento, login, senha, numeroPermissao,
+				genero);
+		this.crp = crp;
+		this.formacao = formacao;
+		this.biografia = biografia;
+		this.telefone = telefone;
+		this.valorConsulta = valorConsulta;
+	}
 
-	@Column(name = "nr_crp",length = 7,nullable = false,unique = true)
-    private int numeroCrp;
 
-    @Column(name = "ds_formacao",length = 40,nullable = false)
-    private String formacao;
 
-    @Column(name = "ds_biografia",length = 120)
-    private String biografia;
+	public Psicologo(String nome, String email, LocalDate dataNascimento,
+			Genero genero, Long crp, String formacao, String biografia,
+			Long telefone, Double valorConsulta) {
+		super(nome, email, dataNascimento, NumeroPermissao.P2, genero);
+		this.crp = crp;
+		this.formacao = formacao;
+		this.biografia = biografia;
+		this.telefone = telefone;
+		this.valorConsulta = valorConsulta;
+	}
 
-    @Column(name = "ds_telefone",nullable = false,length = 11)
-    private long telefone;
-
-    @Column(name = "vl_consulta",length = 6)
-    private double valorConsulta;
-
-    @OneToMany(mappedBy="psicologo")
-    private List<Endereco> endereco;
-
-    
 	public Psicologo() {
 		super();
 	}
-
-	public Psicologo(String nomeUsuario, String email, LocalDate dataNascimento, String login, String senha,
-			String foto, String genero, int numeroCrp, String formacao, String biografia, long telefone,
-			double valorConsulta, List<Endereco> endereco) {
-		super(nomeUsuario, email, dataNascimento, login, senha, foto, genero);
-		this.numeroCrp = numeroCrp;
+	
+	public Psicologo(String nome, String email, LocalDate dataNascimento,
+			String login, String senha, Genero genero, Long crp,
+			String formacao, String biografia, Long telefone,
+			Double valorConsulta) {
+		super(nome, email, dataNascimento, login, senha, NumeroPermissao.P2, genero);
+		this.crp = crp;
 		this.formacao = formacao;
 		this.biografia = biografia;
 		this.telefone = telefone;
 		this.valorConsulta = valorConsulta;
-		this.endereco = endereco;
 	}
 
-	public int getNumeroCrp() {
-		return numeroCrp;
-	}
 
-	public void setNumeroCrp(int numeroCrp) {
-		this.numeroCrp = numeroCrp;
+	public Long getCrp() {
+		return crp;
 	}
-
+	public void setCrp(Long crp) {
+		this.crp = crp;
+	}
 	public String getFormacao() {
 		return formacao;
 	}
-
 	public void setFormacao(String formacao) {
 		this.formacao = formacao;
 	}
-
 	public String getBiografia() {
 		return biografia;
 	}
-
 	public void setBiografia(String biografia) {
 		this.biografia = biografia;
 	}
-
-	public long getTelefone() {
+	public Long getTelefone() {
 		return telefone;
 	}
-
-	public void setTelefone(long telefone) {
+	public void setTelefone(Long telefone) {
 		this.telefone = telefone;
 	}
-
-	public double getValorConsulta() {
+	public Double getValorConsulta() {
 		return valorConsulta;
 	}
-
-	public void setValorConsulta(double valorConsulta) {
+	public void setValorConsulta(Double valorConsulta) {
 		this.valorConsulta = valorConsulta;
 	}
-
-	public List<Endereco> getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
-	}
-    
-    
+	
+	
 }

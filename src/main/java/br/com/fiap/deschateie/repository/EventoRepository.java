@@ -8,6 +8,7 @@ import br.com.fiap.deschateie.model.Evento;
 
 public interface EventoRepository extends JpaRepository<Evento, Long>{
 
-	Page<Evento> findByNome(String nome, Pageable filtro);
+	Page<Evento> findByNome(String nome, Pageable paginacao);
+
 
 }

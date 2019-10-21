@@ -6,8 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.fiap.deschateie.model.Psicologo;
 
-public interface PsicologoRepository extends JpaRepository<Psicologo,Long> {
+public interface PsicologoRepository extends JpaRepository<Psicologo, Long>{
 
-    Page<Psicologo> findByNomeUsuario(String nome, Pageable pageable);
+	Page<Psicologo> findByNome(String nome, Pageable paginacao);
+
+	Page<Psicologo> findByEmail(String email, Pageable paginacao);
 
 }

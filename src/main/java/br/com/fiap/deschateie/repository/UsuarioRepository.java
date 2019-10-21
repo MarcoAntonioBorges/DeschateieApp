@@ -6,6 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.fiap.deschateie.model.Usuario;
 
-public interface UsuarioRepository extends JpaRepository <Usuario,Long> {
-    public Page<Usuario> findByNomeUsuario(String nome, Pageable pageable);
+public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+
+	Page<Usuario> findByNome(String nome, Pageable paginacao);
+
+	Page<Usuario> findByEmail(String email, Pageable paginacao);
+
+	Usuario findByEmail(String email);
+
 }
