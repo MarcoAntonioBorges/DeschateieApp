@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller;
+package br.com.fiap.Deschateie.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.DeschateieDemo.controller.dto.PsicologoDTO;
-import br.com.fiap.DeschateieDemo.controller.form.AtualizacaoPsicologoForm;
-import br.com.fiap.DeschateieDemo.controller.form.PsicologoForm;
-import br.com.fiap.DeschateieDemo.model.Psicologo;
-import br.com.fiap.DeschateieDemo.repository.PsicologoRepository;
+import br.com.fiap.Deschateie.controller.dto.PsicologoDTO;
+import br.com.fiap.Deschateie.controller.form.AtualizacaoPsicologoForm;
+import br.com.fiap.Deschateie.controller.form.PsicologoForm;
+import br.com.fiap.Deschateie.model.Psicologo;
+import br.com.fiap.Deschateie.repository.PsicologoRepository;
 
 @RestController
 @RequestMapping("/psicologos")

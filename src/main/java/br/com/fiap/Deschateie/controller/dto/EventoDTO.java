@@ -1,12 +1,12 @@
-package br.com.fiap.DeschateieDemo.controller.dto;
+package br.com.fiap.Deschateie.controller.dto;
 
 import java.time.LocalDate;
 
 import org.springframework.data.domain.Page;
 
-import br.com.fiap.DeschateieDemo.model.Endereco;
-import br.com.fiap.DeschateieDemo.model.Evento;
-import br.com.fiap.DeschateieDemo.model.Tipo;
+import br.com.fiap.Deschateie.model.Endereco;
+import br.com.fiap.Deschateie.model.Evento;
+import br.com.fiap.Deschateie.model.Tipo;
 
 public class EventoDTO {
 

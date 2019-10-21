@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.model;
+package br.com.fiap.Deschateie.model;
 
 import java.io.Serializable;
 

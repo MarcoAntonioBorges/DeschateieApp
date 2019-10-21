@@ -1,13 +1,13 @@
-package br.com.fiap.DeschateieDemo.controller.dto;
+package br.com.fiap.Deschateie.controller.dto;
 
 import java.time.LocalDate;
 
 import org.springframework.data.domain.Page;
 
-import br.com.fiap.DeschateieDemo.model.Genero;
-import br.com.fiap.DeschateieDemo.model.NumeroPermissao;
-import br.com.fiap.DeschateieDemo.model.Periodo;
-import br.com.fiap.DeschateieDemo.model.Voluntario;
+import br.com.fiap.Deschateie.model.Genero;
+import br.com.fiap.Deschateie.model.NumeroPermissao;
+import br.com.fiap.Deschateie.model.Periodo;
+import br.com.fiap.Deschateie.model.Voluntario;
 
 public class VoluntarioDTO{
 

@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller;
+package br.com.fiap.Deschateie.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -22,14 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.DeschateieDemo.controller.dto.EventoDTO;
-import br.com.fiap.DeschateieDemo.controller.dto.VoluntarioDTO;
-import br.com.fiap.DeschateieDemo.controller.form.AtualizacaoVoluntarioForm;
-import br.com.fiap.DeschateieDemo.controller.form.EventoForm;
-import br.com.fiap.DeschateieDemo.controller.form.VoluntarioForm;
-import br.com.fiap.DeschateieDemo.model.Evento;
-import br.com.fiap.DeschateieDemo.model.Voluntario;
-import br.com.fiap.DeschateieDemo.repository.EventoRepository;
+import br.com.fiap.Deschateie.controller.dto.EventoDTO;
+import br.com.fiap.Deschateie.controller.form.EventoForm;
+import br.com.fiap.Deschateie.model.Evento;
+import br.com.fiap.Deschateie.repository.EventoRepository;
 
 @RestController
 @RequestMapping("/eventos")

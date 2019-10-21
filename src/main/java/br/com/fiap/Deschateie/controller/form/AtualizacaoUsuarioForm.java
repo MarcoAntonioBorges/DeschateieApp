@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller.form;
+package br.com.fiap.Deschateie.controller.form;
 
 import java.time.LocalDate;
 
@@ -7,9 +7,9 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.fiap.DeschateieDemo.model.Genero;
-import br.com.fiap.DeschateieDemo.model.Usuario;
-import br.com.fiap.DeschateieDemo.repository.UsuarioRepository;
+import br.com.fiap.Deschateie.model.Genero;
+import br.com.fiap.Deschateie.model.Usuario;
+import br.com.fiap.Deschateie.repository.UsuarioRepository;
 
 public class AtualizacaoUsuarioForm {
 

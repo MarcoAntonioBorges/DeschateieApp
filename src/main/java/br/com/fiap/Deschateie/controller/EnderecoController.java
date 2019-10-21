@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller;
+package br.com.fiap.Deschateie.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -22,10 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.DeschateieDemo.controller.dto.EnderecoDTO;
-import br.com.fiap.DeschateieDemo.controller.form.EnderecoForm;
-import br.com.fiap.DeschateieDemo.model.Endereco;
-import br.com.fiap.DeschateieDemo.repository.EnderecoRepository;
+import br.com.fiap.Deschateie.controller.dto.EnderecoDTO;
+import br.com.fiap.Deschateie.controller.form.EnderecoForm;
+import br.com.fiap.Deschateie.model.Endereco;
+import br.com.fiap.Deschateie.repository.EnderecoRepository;
 
 @RestController
 @RequestMapping("/enderecos")

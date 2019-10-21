@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller;
+package br.com.fiap.Deschateie.controller;
 
 import java.net.URI;
 import java.util.Optional;
@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.DeschateieDemo.controller.dto.UsuarioDTO;
-import br.com.fiap.DeschateieDemo.controller.form.AtualizacaoNumeroPermissaoForm;
-import br.com.fiap.DeschateieDemo.controller.form.AtualizacaoUsuarioForm;
-import br.com.fiap.DeschateieDemo.controller.form.UsuarioForm;
-import br.com.fiap.DeschateieDemo.model.Usuario;
-import br.com.fiap.DeschateieDemo.repository.UsuarioRepository;
+import br.com.fiap.Deschateie.controller.dto.UsuarioDTO;
+import br.com.fiap.Deschateie.controller.form.AtualizacaoNumeroPermissaoForm;
+import br.com.fiap.Deschateie.controller.form.AtualizacaoUsuarioForm;
+import br.com.fiap.Deschateie.controller.form.UsuarioForm;
+import br.com.fiap.Deschateie.model.Usuario;
+import br.com.fiap.Deschateie.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("/usuarios")

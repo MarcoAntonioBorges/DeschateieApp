@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.config.validacao;
+package br.com.fiap.Deschateie.config.validacao;
 
 public class ErroDeFormularioDTO {
 	

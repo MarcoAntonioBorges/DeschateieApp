@@ -1,12 +1,12 @@
-package br.com.fiap.DeschateieDemo.controller.form;
+package br.com.fiap.Deschateie.controller.form;
 
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.fiap.DeschateieDemo.model.Endereco;
-import br.com.fiap.DeschateieDemo.model.Logradouro;
-import br.com.fiap.DeschateieDemo.repository.EnderecoRepository;
+import br.com.fiap.Deschateie.model.Endereco;
+import br.com.fiap.Deschateie.model.Logradouro;
+import br.com.fiap.Deschateie.repository.EnderecoRepository;
 
 public class EnderecoForm {
 

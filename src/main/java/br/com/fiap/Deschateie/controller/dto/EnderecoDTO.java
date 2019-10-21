@@ -1,9 +1,9 @@
-package br.com.fiap.DeschateieDemo.controller.dto;
+package br.com.fiap.Deschateie.controller.dto;
 
 import org.springframework.data.domain.Page;
 
-import br.com.fiap.DeschateieDemo.model.Endereco;
-import br.com.fiap.DeschateieDemo.model.Logradouro;
+import br.com.fiap.Deschateie.model.Endereco;
+import br.com.fiap.Deschateie.model.Logradouro;
 
 public class EnderecoDTO{
 

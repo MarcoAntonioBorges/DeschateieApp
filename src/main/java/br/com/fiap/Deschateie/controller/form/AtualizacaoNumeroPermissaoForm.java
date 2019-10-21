@@ -1,10 +1,10 @@
-package br.com.fiap.DeschateieDemo.controller.form;
+package br.com.fiap.Deschateie.controller.form;
 
 import javax.validation.constraints.NotNull;
 
-import br.com.fiap.DeschateieDemo.model.NumeroPermissao;
-import br.com.fiap.DeschateieDemo.model.Usuario;
-import br.com.fiap.DeschateieDemo.repository.UsuarioRepository;
+import br.com.fiap.Deschateie.model.NumeroPermissao;
+import br.com.fiap.Deschateie.model.Usuario;
+import br.com.fiap.Deschateie.repository.UsuarioRepository;
 
 public class AtualizacaoNumeroPermissaoForm {
 

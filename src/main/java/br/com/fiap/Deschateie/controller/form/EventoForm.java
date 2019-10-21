@@ -1,4 +1,4 @@
-package br.com.fiap.DeschateieDemo.controller.form;
+package br.com.fiap.Deschateie.controller.form;
 
 import java.time.LocalDate;
 
@@ -6,11 +6,11 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.fiap.DeschateieDemo.model.Endereco;
-import br.com.fiap.DeschateieDemo.model.Evento;
-import br.com.fiap.DeschateieDemo.model.Logradouro;
-import br.com.fiap.DeschateieDemo.model.Tipo;
-import br.com.fiap.DeschateieDemo.repository.EventoRepository;
+import br.com.fiap.Deschateie.model.Endereco;
+import br.com.fiap.Deschateie.model.Evento;
+import br.com.fiap.Deschateie.model.Logradouro;
+import br.com.fiap.Deschateie.model.Tipo;
+import br.com.fiap.Deschateie.repository.EventoRepository;
 
 public class EventoForm {
 
