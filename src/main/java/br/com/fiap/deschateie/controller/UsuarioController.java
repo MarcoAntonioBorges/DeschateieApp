@@ -26,6 +26,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.fiap.deschateie.controller.dto.UsuarioDTO;
 import br.com.fiap.deschateie.controller.form.AtualizacaoNumeroPermissaoForm;
 import br.com.fiap.deschateie.controller.form.AtualizacaoUsuarioForm;
+import br.com.fiap.deschateie.controller.form.UsuarioAutenticar;
 import br.com.fiap.deschateie.controller.form.UsuarioForm;
 import br.com.fiap.deschateie.model.Usuario;
 import br.com.fiap.deschateie.repository.UsuarioRepository;
@@ -75,6 +76,27 @@ public class UsuarioController {
 		} else {
 			usuario = form.converter();
 			repository.save(usuario);
+		}
+		URI uri = uriBuilder.path("/usuarios/{codigo}").buildAndExpand(usuario
+				.getCodigo()).toUri();
+		return ResponseEntity.created(uri).body(new UsuarioDTO(usuario));
+	}
+	
+	@PostMapping("/autenticar")
+	public ResponseEntity<UsuarioDTO> autenticar(
+			@RequestBody @Valid UsuarioAutenticar form,
+			UriComponentsBuilder uriBuilder) {
+		Usuario usuarioEncontrado = repository.findByEmail(form
+				.getEmail());
+		Usuario usuario;
+		if (usuarioEncontrado != null) {
+			if(form.autenticar(usuarioEncontrado)) {
+				usuario = usuarioEncontrado;				
+			} else {
+				return ResponseEntity.notFound().build();
+			}
+		} else {
+			return ResponseEntity.notFound().build();
 		}
 		URI uri = uriBuilder.path("/usuarios/{codigo}").buildAndExpand(usuario
 				.getCodigo()).toUri();
