@@ -10,6 +10,7 @@ import br.com.fiap.deschateie.model.Tipo;
 
 public class EventoDTO {
 
+	private Long codigo;
 	private String nome;
 	private Boolean isGratuito;
 	private Long capacidade;
@@ -22,6 +23,7 @@ public class EventoDTO {
 
 	public EventoDTO(Evento evento) {
 		super();
+		this.codigo = evento.getCodigo();
 		this.nome = evento.getNome();
 		this.isGratuito = evento.getIsGratuito();
 		this.capacidade = evento.getCapacidade();
@@ -50,6 +52,14 @@ public class EventoDTO {
 		this.tipo = tipo;
 		this.foto = foto;
 		this.endereco = endereco;
+	}
+
+	public Long getCodigo() {
+		return this.codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNome() {
@@ -107,7 +117,6 @@ public class EventoDTO {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
 
 	public Tipo getTipo() {
 		return tipo;
